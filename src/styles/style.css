@@ -216,6 +216,18 @@ p {
     color: #ddd;
 }
 
+/* Card Icon Styles */
+.card-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1);
+}
+
 /* Footer */
 .footer {
     background: rgba(255, 255, 255, 0.1); /* Glass effect */
@@ -286,13 +298,13 @@ p {
 /* Contact Form Styles */
 .contact-form {
     width: 100%;
-    padding: 0 20px; /* Add horizontal padding */
-    max-width: 700px; /* Slightly smaller than card to create margin */
+    padding: 0; /* Remove horizontal padding */
     margin: 0 auto;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    padding: 0 10px; /* Add small padding to form groups */
 }
 
 /* Ensure form elements don't overflow */
@@ -300,14 +312,17 @@ p {
 .contact-form textarea {
     width: 100%;
     box-sizing: border-box; /* Include padding in width calculation */
-    padding: 12px;
+    padding: 15px 20px; /* Increased padding */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: var(--text-light);
-    font-size: 1em;
-    transition: all 0.3s ease;
+    font-size: 1.1em; /* Slightly larger font */
+}
+
+.contact-form textarea {
+    min-height: 150px; /* Taller textarea */
 }
 
 .contact-form input:focus,
@@ -338,10 +353,10 @@ p {
 /* Contact page specific styles */
 .info-cards {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Match index.html card sizing */
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Changed to 3 columns */
     gap: 30px;
     width: 100%;
-    max-width: 1200px; /* Match container max-width from index */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -356,7 +371,8 @@ p {
 }
 
 .info-cards .wide-card {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Span all columns */
+    padding: 30px 20px; /* Reduced horizontal padding in card */
 }
 
 /* Dark Theme */
@@ -471,4 +487,9 @@ body.dark-theme .contact-form button {
 
 body.dark-theme .contact-form button:hover {
     background-color: var(--secondary-hover);
+}
+
+/* Dark theme icon color */
+body.dark-theme .card-icon {
+    color: var(--secondary-color);
 }
