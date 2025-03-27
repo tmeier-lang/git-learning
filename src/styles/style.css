@@ -493,3 +493,108 @@ body.dark-theme .contact-form button:hover {
 body.dark-theme .card-icon {
     color: var(--secondary-color);
 }
+
+/* Gallery Styles - Add at the end of the file */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-card {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gradient-overlay {
+    transform: scale(1.05);
+}
+
+/* Gradient backgrounds */
+.gradient-1 {
+    background: linear-gradient(45deg, 
+        rgba(255, 126, 179, 0.4),
+        rgba(255, 126, 179, 0.1));
+}
+
+.gradient-2 {
+    background: linear-gradient(45deg, 
+        rgba(134, 168, 231, 0.4),
+        rgba(134, 168, 231, 0.1));
+}
+
+.gradient-3 {
+    background: linear-gradient(45deg, 
+        rgba(145, 232, 166, 0.4),
+        rgba(145, 232, 166, 0.1));
+}
+
+.gradient-4 {
+    background: linear-gradient(45deg, 
+        rgba(232, 165, 232, 0.4),
+        rgba(232, 165, 189, 0.1));
+}
+
+.gradient-5 {
+    background: linear-gradient(45deg, 
+        rgba(232, 198, 165, 0.4),
+        rgba(232, 212, 165, 0.1));
+}
+
+.gradient-6 {
+    background: linear-gradient(45deg, 
+        rgba(165, 216, 232, 0.4),
+        rgba(165, 232, 223, 0.1));
+}
+
+/* Dark theme adjustments for gallery */
+body.dark-theme .gradient-1 {
+    background: linear-gradient(45deg, 
+        rgba(41, 66, 155, 0.7),
+        rgba(41, 66, 155, 0.3));
+}
+
+body.dark-theme .gradient-2 {
+    background: linear-gradient(45deg, 
+        rgba(28, 48, 128, 0.7),
+        rgba(28, 48, 128, 0.3));
+}
+
+body.dark-theme .gradient-3 {
+    background: linear-gradient(45deg, 
+        rgba(35, 88, 132, 0.7),
+        rgba(35, 88, 132, 0.3));
+}
+
+body.dark-theme .gradient-4 {
+    background: linear-gradient(45deg, 
+        rgba(66, 41, 155, 0.4),
+        rgba(66, 41, 155, 0.1));
+}
+
+body.dark-theme .gradient-5 {
+    background: linear-gradient(45deg, 
+        rgba(48, 128, 155, 0.4),
+        rgba(48, 128, 155, 0.1));
+}
+
+body.dark-theme .gradient-6 {
+    background: linear-gradient(45deg, 
+        rgba(88, 132, 155, 0.4),
+        rgba(88, 132, 155, 0.1));
+}
