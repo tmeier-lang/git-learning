@@ -502,27 +502,45 @@ body.dark-theme .card-icon {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
+    /* Remove contain property */
 }
 
 .gallery-card {
-    height: 300px;
+    aspect-ratio: 4/3;
     position: relative;
-    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
     cursor: pointer;
 }
 
+.gallery-card.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    max-width: calc(90vh * 4/3);
+    max-height: calc(90vw * 3/4);
+    margin: auto;
+    z-index: 1001;
+}
+
+.gallery-card-clone {
+    visibility: hidden;
+    pointer-events: none;
+    aspect-ratio: 4/3;
+}
+
+/* Keep other gallery styles the same */
 .gradient-overlay {
     position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-card:hover .gradient-overlay {
-    transform: scale(1.05);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Gradient backgrounds */
