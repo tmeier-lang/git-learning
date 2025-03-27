@@ -1,12 +1,12 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: radial-gradient(circle at 20% 30%, rgba(255, 121, 198, 0.8), transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(121, 198, 255, 0.8), transparent 60%),
-                radial-gradient(circle at 50% 50%, rgba(198, 255, 121, 0.8), transparent 60%);
+                radial-gradient(circle at 80% 70%, rgba(121, 198, 255, 0.8), transparent 60%);
     background-color: #1e1e2f;
-    background-blend-mode: screen; /* Makes the colors more vibrant */
+    background-blend-mode: screen;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,7 @@ p {
     color: #ddd;
 }
 
+/* Navbar */
 .navbar {
     background: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
@@ -60,13 +61,12 @@ p {
     color: #ff7eb3;
 }
 
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 150px 20px;
-    background: none; /* Remove any background that might darken the body */
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    /*backdrop-filter: blur(10px);*/
 }
 
 .hero-content {
@@ -105,6 +105,7 @@ p {
     transform: scale(1.1);
 }
 
+/* Container */
 .container {
     flex: 1;
     display: flex;
@@ -115,7 +116,6 @@ p {
     margin: 20px auto;
     width: 90%;
     max-width: 1200px;
-    background: none; /* Ensure no background darkens the body */
 }
 
 .card-grid {
@@ -126,7 +126,7 @@ p {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 20px;
@@ -144,42 +144,21 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
 .card h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #fff;
-    position: relative;
-    z-index: 1;
 }
 
 .card p {
     font-size: 1em;
     color: #ddd;
-    position: relative;
-    z-index: 1;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     padding: 10px;
-    background: none; /* Ensure no background darkens the body */
     color: white;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -195,131 +174,34 @@ p {
     color: #ff758c;
 }
 
-.project-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.project-list li {
-    margin: 15px 0;
-    position: relative;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.project-list li:hover {
-    color: #ff7e5f;
-}
-
-.project-list .description {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    z-index: 10;
-    font-size: 0.9em;
-}
-
-.project-list li:hover .description {
-    display: block;
-}
-
-/* Background circles start */
+/* Background Circles */
 .circles {
-    position: fixed; /* Ensures it stays fixed across the entire page */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    z-index: -1; /* Ensure it stays behind all content */
+    z-index: -1;
 }
 
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(120deg, #ff758c, #86a8e7); /* Adjusted to match your theme */
-    opacity: 0.8;
-    animation: float 6s cubic-bezier(0.54, 0.085, 0.5, 0.92) infinite alternate;
+    background: radial-gradient(circle at 30% 30%, #ff758c, #86a8e7);
+    opacity: 0.7;
 }
 
-/* Larger circles */
 .circle-1 {
-    height: 700px; /* Increased size */
-    width: 700px;
-    top: 50px;
-    left: -200px;
-    animation-delay: 3s;
+    height: 1200px;
+    width: 1200px;
+    top: -300px;
+    left: -400px;
 }
 
 .circle-2 {
-    height: 600px; /* Increased size */
-    width: 600px;
-    bottom: 100px;
-    right: -250px;
-    animation-delay: 2s;
+    height: 1000px;
+    width: 1000px;
+    bottom: -200px;
+    right: -300px;
 }
-
-/* Medium-sized circles */
-.circle-3 {
-    height: 500px;
-    width: 500px;
-    top: 300px; /* Moved closer to the middle */
-    right: 100px;
-    animation-delay: 4s;
-}
-
-.circle-4 {
-    height: 450px;
-    width: 450px;
-    bottom: 200px; /* Moved closer to the middle */
-    left: 100px;
-    animation-delay: 1s;
-}
-
-/* New larger circle in the middle */
-.circle-7 {
-    height: 800px; /* Very large circle */
-    width: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centered in the middle of the page */
-    animation-delay: 5s;
-    opacity: 0.6; /* Slightly reduced opacity for subtle effect */
-}
-
-/* Smaller circles */
-.circle-5 {
-    height: 300px;
-    width: 300px;
-    bottom: 50%;
-    left: 20%;
-    animation-delay: 2.5s;
-}
-
-.circle-6 {
-    height: 350px;
-    width: 350px;
-    bottom: 40%;
-    right: 30%;
-    animation-delay: 3.5s;
-}
-
-/* Floating animation */
-@keyframes float {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    100% {
-        transform: translateY(-20px) translateX(20px);
-    }
-}
-/* Background circles end */
