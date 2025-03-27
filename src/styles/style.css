@@ -14,7 +14,7 @@
     --button-bg: var(--primary-color);
     --button-hover: var(--primary-hover);
     --link-color: var(--primary-color);
-    --link-hover: var(--primary-hover);
+    --link-hover: var(--primary-hover); 
     --circle-gradient-1: #ff758c;
     --circle-gradient-2: #86a8e7;
 }
@@ -283,6 +283,56 @@ p {
     color: var(--primary-hover);
 }
 
+/* Contact Form Styles */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: var(--text-light);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 126, 179, 0.2);
+}
+
+.contact-form button {
+    background-color: var(--button-bg);
+    color: var(--text-light);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.contact-form button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
 /* Dark Theme */
 body.dark-theme {
     background: radial-gradient(circle at 20% 30%, 
@@ -374,4 +424,25 @@ body.dark-theme [href^="mailto:"] {
 
 body.dark-theme [href^="mailto:"]:hover {
     color: var(--secondary-hover);
+}
+
+/* Dark Theme Form Styles */
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .contact-form input:focus,
+body.dark-theme .contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(134, 168, 231, 0.2);
+}
+
+body.dark-theme .contact-form button {
+    background-color: var(--secondary-color);
+}
+
+body.dark-theme .contact-form button:hover {
+    background-color: var(--secondary-hover);
 }

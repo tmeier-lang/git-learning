@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Git Course Test Project</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+    <!-- Background Circles -->
+    <div class="circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">
+            <span id="theme-icon" class="moon">🌙</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p>Have questions about Git? Let's connect!</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <div class="container">
+        <div class="card">
+            <h2>Contact Form</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Additional Contact Information -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>Email</h3>
+                <p>Drop us a line at</p>
+                <p><a href="mailto:dontcontact@me">dontcontact@me</a></p>
+            </div>
+            <div class="card">
+                <h3>GitHub</h3>
+                <p>Check out my repositories</p>
+                <p><a href="https://github.com/tmeier-lang" target="_blank">github.com/tmeier-lang</a></p>
+            </div>
+            <div class="card">
+                <h3>Location</h3>
+                <p>Remote-first</p>
+                <p>Available Worldwide</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Open Source Project - <a href="https://github.com/tmeier-lang" target="_blank">tmeier-lang</a></p>
+    </div>
+
+    <script src="src/scripts/script.js"></script>
+</body>
+</html>
