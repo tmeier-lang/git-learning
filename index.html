@@ -10,17 +10,56 @@
     <nav class="navbar">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <div class="container">
+    <header class="hero">
         <h1>Welcome to the Git Course Test Project</h1>
-        <p>This project is designed to help me learn the basics of Git.</p>
+        <p>Learn, Collaborate, and Build with Git!</p>
+        <a href="#about" class="btn">Get Started</a>
+    </header>
+    <div class="container" id="about">
+        <h2>About This Project</h2>
+        <p>This project is designed to help you learn the basics of Git, including version control, branching, merging, and collaboration on GitHub.</p>
+    </div>
+    <div class="container" id="projects">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            <li>
+                <strong>Version Control Basics</strong>
+                <p class="description">Learn how to initialize a Git repository, track changes, and understand the importance of version control in software development.</p>
+            </li>
+            <li>
+                <strong>Branching and Merging</strong>
+                <p class="description">Master the concepts of branching to work on features independently and merging to integrate changes seamlessly.</p>
+            </li>
+            <li>
+                <strong>Collaborating on GitHub</strong>
+                <p class="description">Explore how to use GitHub for collaboration, including creating repositories, forking, and submitting pull requests.</p>
+            </li>
+            <li>
+                <strong>Resolving Merge Conflicts</strong>
+                <p class="description">Gain hands-on experience in identifying and resolving merge conflicts during collaborative development.</p>
+            </li>
+            <li>
+                <strong>Advanced Git Commands</strong>
+                <p class="description">Dive deeper into commands like `rebase`, `stash`, and `cherry-pick` to enhance your Git workflow.</p>
+            </li>
+            <li>
+                <strong>GitHub Pages</strong>
+                <p class="description">Learn how to host your project on GitHub Pages and make it accessible to the world.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="container" id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out if you have any questions or suggestions!</p>
+        <p>Email: dontcontact@me</p>
     </div>
     <div class="footer">
-        <p>Learning Project - <a href="https://github.com/tmeier-lang" target="_blank">tmeier-lang</a></p>
+        <p>Open Source Project - <a href="https://github.com/tmeier-lang" target="_blank">tmeier-lang</a></p>
     </div>
     <script src="src/scripts/script.js"></script>
 </body>

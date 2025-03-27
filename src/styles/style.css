@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to bottom right, #ff7e5f, #feb47b, #86a8e7);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -25,8 +25,12 @@ p {
 }
 
 .navbar {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.9);
     padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar ul {
@@ -52,6 +56,40 @@ p {
     color: #ff7e5f;
 }
 
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7e5f;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #feb47b;
+}
+
 .container {
     flex: 1;
     display: flex;
@@ -62,13 +100,36 @@ p {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.container p, .container ul {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container ul li {
+    margin: 10px 0;
 }
 
 .footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.9);
     color: white;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -82,4 +143,41 @@ p {
 
 .footer a:hover {
     color: #feb47b;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-list li {
+    margin: 15px 0;
+    position: relative;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.project-list li:hover {
+    color: #ff7e5f;
+}
+
+.project-list .description {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 10;
+    font-size: 0.9em;
+}
+
+.project-list li:hover .description {
+    display: block;
 }
