@@ -1,16 +1,26 @@
 // Define initHeader in the global scope so include.js can call it later
 function initHeader() {
+    // Check and apply stored theme
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        const themeIcon = document.getElementById("theme-icon");
+        if (themeIcon) {
+            themeIcon.textContent = "☀️";
+        }
+    }
+    
     // Toggle dark theme
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
     if (themeToggle && themeIcon) {
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("dark-theme");
-            themeIcon.textContent = document.body.classList.contains("dark-theme")
-                ? "☀️"  // light mode icon
-                : "🌙"; // dark mode icon
+            const isDark = document.body.classList.contains("dark-theme");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            themeIcon.textContent = isDark ? "☀️" : "🌙";
         });
     }
+    
     // Toggle mobile navigation with animation
     const hamburger = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');

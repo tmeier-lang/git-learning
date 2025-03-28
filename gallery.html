@@ -1,56 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Git Course Test Project</title>
-    <link rel="stylesheet" href="src/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Git Course Test Project</title>
+  <style>
+    /* Hide the entire document initially */
+    html { visibility: hidden; }
+    /* Fullscreen cover to prevent flash */
+    #page-cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      /* Light theme background; will be swapped to dark if needed */
+      background: #1e1e2f;
+      z-index: 9999;
+    }
+  </style>
+  <script>
+    (function() {
+      // Immediately check for the stored theme and apply it before CSS loads
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-theme");
+        // Change the cover's background for dark mode if desired
+        document.write('<style>#page-cover { background: #070d1a; }</style>');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
-
-    <!-- Background Circles -->
-    <div class="circles">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
+  <!-- Cover div -->
+  <div id="page-cover"></div>
+  
+  <div id="header-placeholder"></div>
+  
+  <!-- Background Circles -->
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+  
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Git Gallery</h1>
+      <p>Visual journey through Git concepts</p>
     </div>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Git Gallery</h1>
-            <p>Visual journey through Git concepts</p>
-        </div>
-    </header>
-
-    <!-- Gallery Grid -->
-    <div class="container">
-        <div class="gallery-grid">
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-1"></div>
-            </div>
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-2"></div>
-            </div>
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-3"></div>
-            </div>
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-4"></div>
-            </div>
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-5"></div>
-            </div>
-            <div class="card gallery-card">
-                <div class="gradient-overlay gradient-6"></div>
-            </div>
-        </div>
+  </header>
+  
+  <!-- Gallery Grid -->
+  <div class="container">
+    <div class="gallery-grid">
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-1"></div>
+      </div>
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-2"></div>
+      </div>
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-3"></div>
+      </div>
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-4"></div>
+      </div>
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-5"></div>
+      </div>
+      <div class="card gallery-card">
+        <div class="gradient-overlay gradient-6"></div>
+      </div>
     </div>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="src/scripts/script.js"></script>
-    <script src="src/scripts/include.js"></script>
+  </div>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="src/scripts/script.js"></script>
+  <script src="src/scripts/include.js"></script>
+  <script>
+    // Once the DOM is loaded, fade out the cover and then remove it
+    document.addEventListener("DOMContentLoaded", function() {
+      var cover = document.getElementById("page-cover");
+      cover.style.transition = "opacity 0.3s ease";
+      cover.style.opacity = "0";
+      setTimeout(function() {
+        cover.remove();
+        document.documentElement.style.visibility = "visible";
+      }, 300);
+    });
+  </script>
 </body>
 </html>

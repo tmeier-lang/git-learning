@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Git Course Test Project</title>
+    <style>
+        /* Hide the entire document initially */
+        html { visibility: hidden; }
+        /* Fullscreen cover to prevent flash */
+        #page-cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Set a background matching your light theme; it will be swapped for dark if needed */
+            background: #1e1e2f;
+            z-index: 9999;
+        }
+    </style>
+    <script>
+        (function() {
+            // Immediately check for the stored theme and apply it before CSS loads
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark-theme");
+                // Change the cover's background for dark mode if desired
+                document.write('<style>#page-cover { background: #070d1a; }</style>');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Cover div -->
+    <div id="page-cover"></div>
+
     <div id="header-placeholder"></div>
 
     <!-- Background Circles -->
@@ -68,5 +96,17 @@
 
     <script src="src/scripts/script.js"></script>
     <script src="src/scripts/include.js"></script>
+    <script>
+        // Once the DOM is loaded, fade out the cover and then remove it so the page is shown
+        document.addEventListener("DOMContentLoaded", function() {
+            var cover = document.getElementById("page-cover");
+            cover.style.transition = "opacity 0.3s ease";
+            cover.style.opacity = "0";
+            setTimeout(function() {
+                cover.remove();
+                document.documentElement.style.visibility = "visible";
+            }, 300);
+        });
+    </script>
 </body>
 </html>

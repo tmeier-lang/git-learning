@@ -4,69 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Git Course Test Project</title>
+  <style>
+    /* Hide the document initially */
+    html { visibility: hidden; }
+    /* Fullscreen cover to prevent flash */
+    #page-cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      /* Set a background matching your light theme, or use transparent if dark-theme changes are stark */
+      background: #1e1e2f;
+      z-index: 9999;
+    }
+  </style>
+  <script>
+    (function() {
+      // Immediately set the theme before CSS loads
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-theme");
+        // Optionally adjust the cover's background if you want dark-mode here:
+        document.write('<style>#page-cover { background: #070d1a; }</style>');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="src/styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
+  <!-- Cover div -->
+  <div id="page-cover"></div>
 
-    <!-- Background Circles -->
-    <div class="circles">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-    </div>
+  <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Git Course Test Project</h1>
-            <p>Learn, Collaborate, and Build with Git!</p>
-            <a href="#about" class="btn">Get Started</a>
-        </div>
-    </header>
+  <!-- Background Circles -->
+  <div class="circles">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+  </div>
 
-    <!-- About Section -->
-    <div class="container" id="about">
-        <div class="card">
-            <h2>About This Project</h2>
-            <p>This project is designed to help you learn the basics of Git, including version control, branching, merging, and collaboration on GitHub.</p>
-        </div>
-    </div>
+  <!-- Hero Section -->
+  <header class="hero">
+      <div class="hero-content">
+          <h1>Git Course Test Project</h1>
+          <p>Learn, Collaborate, and Build with Git!</p>
+          <a href="#about" class="btn">Get Started</a>
+      </div>
+  </header>
 
-    <!-- Projects Section -->
-    <div class="container" id="projects">
-        <h2>Projects</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Version Control Basics</h3>
-                <p>Learn how to initialize a Git repository, track changes, and understand the importance of version control in software development.</p>
-            </div>
-            <div class="card">
-                <h3>Branching and Merging</h3>
-                <p>Master the concepts of branching to work on features independently and merging to integrate changes seamlessly.</p>
-            </div>
-            <div class="card">
-                <h3>Collaborating on GitHub</h3>
-                <p>Explore how to use GitHub for collaboration, including creating repositories, forking, and submitting pull requests.</p>
-            </div>
-            <div class="card">
-                <h3>Resolving Merge Conflicts</h3>
-                <p>Gain hands-on experience in identifying and resolving merge conflicts during collaborative development.</p>
-            </div>
-            <div class="card">
-                <h3>Advanced Git Commands</h3>
-                <p>Dive deeper into commands like <code>rebase</code>, <code>stash</code>, and <code>cherry-pick</code> to enhance your Git workflow.</p>
-            </div>
-            <div class="card">
-                <h3>GitHub Pages</h3>
-                <p>Learn how to host your project on GitHub Pages and make it accessible to the world.</p>
-            </div>
-        </div>
-    </div>
+  <!-- About Section -->
+  <div class="container" id="about">
+      <div class="card">
+          <h2>About This Project</h2>
+          <p>This project is designed to help you learn the basics of Git, including version control, branching, merging, and collaboration on GitHub.</p>
+      </div>
+  </div>
 
-    <div id="footer-placeholder"></div>
+  <!-- Projects Section -->
+  <div class="container" id="projects">
+      <h2>Projects</h2>
+      <div class="card-grid">
+          <div class="card">
+              <h3>Version Control Basics</h3>
+              <p>Learn how to initialize a Git repository, track changes, and understand the importance of version control in software development.</p>
+          </div>
+          <div class="card">
+              <h3>Branching and Merging</h3>
+              <p>Master the concepts of branching to work on features independently and merging to integrate changes seamlessly.</p>
+          </div>
+          <div class="card">
+              <h3>Collaborating on GitHub</h3>
+              <p>Explore how to use GitHub for collaboration, including creating repositories, forking, and submitting pull requests.</p>
+          </div>
+          <div class="card">
+              <h3>Resolving Merge Conflicts</h3>
+              <p>Gain hands-on experience in identifying and resolving merge conflicts during collaborative development.</p>
+          </div>
+          <div class="card">
+              <h3>Advanced Git Commands</h3>
+              <p>Dive deeper into commands like <code>rebase</code>, <code>stash</code>, and <code>cherry-pick</code> to enhance your Git workflow.</p>
+          </div>
+          <div class="card">
+              <h3>GitHub Pages</h3>
+              <p>Learn how to host your project on GitHub Pages and make it accessible to the world.</p>
+          </div>
+      </div>
+  </div>
 
-    <script src="src/scripts/script.js"></script>
-    <script src="src/scripts/include.js"></script>
+  <div id="footer-placeholder"></div>
+
+  <script src="src/scripts/script.js"></script>
+  <script src="src/scripts/include.js"></script>
+  <script>
+    // Remove the cover when DOM is ready, with a fade-out
+    document.addEventListener("DOMContentLoaded", function() {
+      var cover = document.getElementById("page-cover");
+      cover.style.transition = "opacity 0.3s ease";
+      cover.style.opacity = "0";
+      // Remove cover after transition completes (300ms)
+      setTimeout(function() {
+        cover.remove();
+        document.documentElement.style.visibility = "visible";
+      }, 300);
+    });
+  </script>
 </body>
 </html>
