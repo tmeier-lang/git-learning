@@ -509,22 +509,19 @@ body.dark-theme .card-icon {
 .gallery-card {
     aspect-ratio: 4/3;
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
     cursor: pointer;
 }
 
 .gallery-card.fullscreen {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* Remove top/left/transform and let JavaScript handle positioning */
+    z-index: 1001;
     width: 90vw;
     height: 90vh;
     max-width: calc(90vh * 4/3);
     max-height: calc(90vw * 3/4);
-    margin: auto;
-    z-index: 1001;
 }
 
 .gallery-card-clone {
