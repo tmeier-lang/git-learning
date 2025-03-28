@@ -8,25 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div id="header-placeholder"></div>
+
     <!-- Background Circles -->
     <div class="circles">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
     </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="/gallery.html">Gallery</a></li>
-        </ul>
-        <button id="theme-toggle" class="theme-toggle">
-            <span id="theme-icon" class="moon">🌙</span>
-        </button>
-    </nav>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -39,7 +27,6 @@
     <!-- Contact Form Section -->
     <div class="container">
         <div class="info-cards">
-            <!-- Contact Form Card (2x width) -->
             <div class="card wide-card">
                 <i class="fas fa-paper-plane card-icon"></i>
                 <h2>Contact Form</h2>
@@ -56,24 +43,18 @@
                     <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
-            
-            <!-- Email Card -->
             <div class="card">
                 <i class="fas fa-envelope card-icon"></i>
                 <h3>Email</h3>
                 <p>Drop us a line at</p>
                 <p><a href="mailto:dontcontact@me">dontcontact@me</a></p>
             </div>
-            
-            <!-- GitHub Card -->
             <div class="card">
                 <i class="fab fa-github card-icon"></i>
                 <h3>GitHub</h3>
                 <p>Check out my repositories</p>
                 <p><a href="https://github.com/tmeier-lang" target="_blank">github.com/tmeier-lang</a></p>
             </div>
-            
-            <!-- Location Card -->
             <div class="card">
                 <i class="fas fa-globe card-icon"></i>
                 <h3>Location</h3>
@@ -83,11 +64,9 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>Open Source Project - <a href="https://github.com/tmeier-lang" target="_blank">tmeier-lang</a></p>
-    </div>
+    <div id="footer-placeholder"></div>
 
     <script src="src/scripts/script.js"></script>
+    <script src="src/scripts/include.js"></script>
 </body>
 </html>
