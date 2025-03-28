@@ -1,3 +1,35 @@
+// Define initHeader in the global scope so include.js can call it later
+function initHeader() {
+    // Toggle dark theme
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-theme");
+            themeIcon.textContent = document.body.classList.contains("dark-theme")
+                ? "☀️"  // light mode icon
+                : "🌙"; // dark mode icon
+        });
+    }
+    // Toggle mobile navigation with animation
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            // Stagger link animations
+            document.querySelectorAll('.nav-links li').forEach((link, index) => {
+                if (navLinks.classList.contains('active')) {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                } else {
+                    link.style.animation = '';
+                }
+            });
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Your fullscreen/gallery code remains unchanged...
     
@@ -76,17 +108,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
-// Function to initialize header-related code such as theme toggle
-function initHeader() {
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    if (themeToggle && themeIcon) {
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-theme");
-            themeIcon.textContent = document.body.classList.contains("dark-theme")
-                ? "☀️"  // light mode icon
-                : "🌙"; // dark mode icon
-        });
-    }
-}

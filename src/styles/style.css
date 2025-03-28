@@ -577,3 +577,206 @@ body.dark-theme .gradient-5 {
 body.dark-theme .gradient-6 {
     background: linear-gradient(45deg, rgba(88,132,155,0.4), rgba(88,132,155,0.1));
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Allow the body to scroll on both axes */
+    body {
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    /* Allow body to scroll horizontally if needed */
+    body {
+        overflow-x: auto;
+    }
+
+    /* Adjust hero section for smaller screens */
+    .hero {
+        padding: 100px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    /* Improve navbar accessibility by stacking menu items */
+    /*
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    */
+    
+    /* Adjust grid layouts for cards and galleries to a single column */
+    .card-grid,
+    .gallery-grid,
+    .info-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+        margin: 0 10px;
+    }
+    
+    /* Ensure container width adapts to screen size */
+    .container {
+        width: 95%;
+    }
+    
+    /* Reduce padding on cards for smaller screens */
+    .card,
+    .gallery-card {
+        padding: 15px;
+    }
+    
+    /* Increase tap area for clickable elements */
+    .btn, .theme-toggle {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+/* Global hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Default nav links styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+/* Mobile Responsive Navbar with Glassmorphism */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+    .navbar .nav-links {
+        display: none;  /* Hide nav links by default */
+        flex-direction: column;
+        width: 100%;
+        /* Glassmorphism styles for light theme */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        position: absolute;
+        top: 60px;   /* Adjust to your navbar height */
+        left: 0;
+        padding: 20px;
+        z-index: 1000;
+    }
+    .navbar .nav-links.active {
+        display: flex;
+    }
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Dark Theme Overrides for Glassmorphism in Navbar */
+body.dark-theme .navbar .nav-links {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* CUSTOM HAMBURGER ANIMATION */
+.hamburger-menu {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: none; /* hidden by default; shown in mobile media query below */
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* When toggled, animate bars into an "X" */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ANIMATED NAV MENU (Glassmorphism applied) */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .navbar .nav-links {
+        display: none;  /* hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        position: absolute;
+        top: 60px;   /* adjust based on your navbar height */
+        left: 0;
+        padding: 20px;
+        z-index: 1000;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .navbar .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Dark Theme Override for Nav Menu's Glassmorphism */
+body.dark-theme .navbar .nav-links {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Optional: Add staggered animation to nav links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
