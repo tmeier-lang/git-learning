@@ -25,8 +25,8 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: radial-gradient(circle at 20% 30%, rgba(255, 121, 198, 0.8), transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(121, 198, 255, 0.8), transparent 60%);
+    background: radial-gradient(circle at 20% 30%, rgba(255,121,198,0.8), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(121,198,255,0.8), transparent 60%);
     background-color: #1e1e2f;
     background-blend-mode: screen;
     color: var(--text-light);
@@ -39,7 +39,7 @@ h1 {
     color: #fff;
     text-align: center;
     font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 p {
@@ -52,18 +52,18 @@ p {
 
 /* Navbar */
 .navbar {
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255,255,255,0.2);
     padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 60px; /* Add fixed height to navbar */
+    min-height: 60px;
 }
 
 .navbar ul {
@@ -90,35 +90,35 @@ p {
 
 /* Theme Toggle Button in Navbar */
 .theme-toggle {
-    position: relative; /* Align it properly within the navbar */
+    position: relative;
     background: none;
     border: none;
     font-size: 1.5em;
     cursor: pointer;
     color: white;
     transition: all 0.3s ease;
-    margin-left: 20px; /* Add margin instead of auto */
-    height: 40px; /* Fixed height */
-    width: 40px; /* Fixed width */
-    display: flex;
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    border-radius: 50%; /* Make it circular */
-    padding: 8px; /* Add padding instead of fixed height/width */
-    z-index: 1; /* Ensure it stays above other elements */
-}
-
-.theme-toggle span {
+    margin-left: 20px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    padding: 8px;
+    z-index: 1;
+}
+
+.theme-toggle span {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease;
 }
 
 .theme-toggle:hover span {
-    transform: scale(1.1); /* Reduce scale amount */
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -126,7 +126,7 @@ p {
     text-align: center;
     padding: 150px 20px;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-content {
@@ -186,12 +186,12 @@ p {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     text-align: center;
     position: relative;
@@ -201,8 +201,8 @@ p {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
 }
 
 .card h3 {
@@ -230,14 +230,14 @@ p {
 
 /* Footer */
 .footer {
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255,255,255,0.2);
     text-align: center;
     padding: 10px;
     color: white;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
 }
 
 .footer a {
@@ -264,10 +264,7 @@ p {
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, 
-        var(--circle-gradient-1),
-        var(--circle-gradient-2)
-    );
+    background: radial-gradient(circle at 30% 30%, var(--circle-gradient-1), var(--circle-gradient-2));
     opacity: 0.7;
 }
 
@@ -298,38 +295,38 @@ p {
 /* Contact Form Styles */
 .contact-form {
     width: 100%;
-    padding: 0; /* Remove horizontal padding */
+    padding: 0;
     margin: 0 auto;
 }
 
 .form-group {
     margin-bottom: 25px;
-    padding: 0 10px; /* Add small padding to form groups */
+    padding: 0 10px;
 }
 
 /* Ensure form elements don't overflow */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    box-sizing: border-box; /* Include padding in width calculation */
-    padding: 15px 20px; /* Increased padding */
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     color: var(--text-light);
-    font-size: 1.1em; /* Slightly larger font */
+    font-size: 1.1em;
 }
 
 .contact-form textarea {
-    min-height: 150px; /* Taller textarea */
+    min-height: 150px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(255, 126, 179, 0.2);
+    box-shadow: 0 0 10px rgba(255,126,179,0.2);
 }
 
 .contact-form button {
@@ -353,7 +350,7 @@ p {
 /* Contact page specific styles */
 .info-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Changed to 3 columns */
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     gap: 30px;
     width: 100%;
     max-width: 1200px;
@@ -367,23 +364,19 @@ p {
     flex-direction: column;
     justify-content: center;
     padding: 30px;
-    width: auto; /* Let grid handle the width */
+    width: auto;
 }
 
 .info-cards .wide-card {
-    grid-column: 1 / -1; /* Span all columns */
-    padding: 30px 20px; /* Reduced horizontal padding in card */
+    grid-column: 1 / -1;
+    padding: 30px 20px;
 }
 
 /* Dark Theme */
 body.dark-theme {
-    background: radial-gradient(circle at 20% 30%, 
-                rgba(41, 66, 155, 0.5), /* Richer navy blue */
-                transparent 60%),
-              radial-gradient(circle at 80% 70%, 
-                rgba(28, 48, 128, 0.5), /* Deeper blue */
-                transparent 60%);
-    background-color: #070d1a; /* Darker base color */
+    background: radial-gradient(circle at 20% 30%, rgba(41,66,155,0.5), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(28,48,128,0.5), transparent 60%);
+    background-color: #070d1a;
     color: var(--text-muted-light);
 }
 
@@ -394,8 +387,8 @@ body.dark-theme h3 {
 }
 
 body.dark-theme .navbar {
-    background: rgba(0, 0, 0, 0.4); /* Darker glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 body.dark-theme .navbar ul li a:hover,
@@ -410,8 +403,8 @@ body.dark-theme .card a:hover {
 }
 
 body.dark-theme .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 body.dark-theme .card p {
@@ -419,8 +412,8 @@ body.dark-theme .card p {
 }
 
 body.dark-theme .footer {
-    background: rgba(0, 0, 0, 0.4); /* Darker glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 body.dark-theme .hero h1 {
@@ -439,17 +432,14 @@ body.dark-theme .hero .btn:hover {
 }
 
 body.dark-theme .circle {
-    background: radial-gradient(circle at 30% 30%, 
-        rgba(134, 168, 231, 0.15), /* Increased opacity light blue */
-        rgba(117, 140, 255, 0.12) /* Increased opacity secondary blue */
-    );
-    opacity: 0.6; /* Increased overall opacity */
+    background: radial-gradient(circle at 30% 30%, rgba(134,168,231,0.15), rgba(117,140,255,0.12));
+    opacity: 0.6;
 }
 
 /* Add to your dark theme section */
 body.dark-theme .card a,
 body.dark-theme .footer a,
-body.dark-theme [href^="mailto:"] { /* Target email links */
+body.dark-theme [href^="mailto:"] {
     color: var(--secondary-color);
     transition: color 0.3s ease;
 }
@@ -471,14 +461,14 @@ body.dark-theme [href^="mailto:"]:hover {
 /* Dark Theme Form Styles */
 body.dark-theme .contact-form input,
 body.dark-theme .contact-form textarea {
-    background: rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.1);
 }
 
 body.dark-theme .contact-form input:focus,
 body.dark-theme .contact-form textarea:focus {
     border-color: var(--secondary-color);
-    box-shadow: 0 0 10px rgba(134, 168, 231, 0.2);
+    box-shadow: 0 0 10px rgba(134,168,231,0.2);
 }
 
 body.dark-theme .contact-form button {
@@ -503,20 +493,18 @@ body.dark-theme .card-icon {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    /* Remove contain property */
 }
 
 .gallery-card {
     aspect-ratio: 4/3;
     position: relative;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
     transform-origin: center;
     cursor: pointer;
 }
 
 .gallery-card.fullscreen {
     position: fixed;
-    /* Remove top/left/transform and let JavaScript handle positioning */
     z-index: 1001;
     width: 90vw;
     height: 90vh;
@@ -537,79 +525,55 @@ body.dark-theme .card-icon {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
 /* Gradient backgrounds */
 .gradient-1 {
-    background: linear-gradient(45deg, 
-        rgba(255, 126, 179, 0.4),
-        rgba(255, 126, 179, 0.1));
+    background: linear-gradient(45deg, rgba(255,126,179,0.4), rgba(255,126,179,0.1));
 }
 
 .gradient-2 {
-    background: linear-gradient(45deg, 
-        rgba(134, 168, 231, 0.4),
-        rgba(134, 168, 231, 0.1));
+    background: linear-gradient(45deg, rgba(134,168,231,0.4), rgba(134,168,231,0.1));
 }
 
 .gradient-3 {
-    background: linear-gradient(45deg, 
-        rgba(145, 232, 166, 0.4),
-        rgba(145, 232, 166, 0.1));
+    background: linear-gradient(45deg, rgba(145,232,166,0.4), rgba(145,232,166,0.1));
 }
 
 .gradient-4 {
-    background: linear-gradient(45deg, 
-        rgba(232, 165, 232, 0.4),
-        rgba(232, 165, 189, 0.1));
+    background: linear-gradient(45deg, rgba(232,165,232,0.4), rgba(232,165,189,0.1));
 }
 
 .gradient-5 {
-    background: linear-gradient(45deg, 
-        rgba(232, 198, 165, 0.4),
-        rgba(232, 212, 165, 0.1));
+    background: linear-gradient(45deg, rgba(232,198,165,0.4), rgba(232,212,165,0.1));
 }
 
 .gradient-6 {
-    background: linear-gradient(45deg, 
-        rgba(165, 216, 232, 0.4),
-        rgba(165, 232, 223, 0.1));
+    background: linear-gradient(45deg, rgba(165,216,232,0.4), rgba(165,232,223,0.1));
 }
 
 /* Dark theme adjustments for gallery */
 body.dark-theme .gradient-1 {
-    background: linear-gradient(45deg, 
-        rgba(41, 66, 155, 0.7),
-        rgba(41, 66, 155, 0.3));
+    background: linear-gradient(45deg, rgba(41,66,155,0.7), rgba(41,66,155,0.3));
 }
 
 body.dark-theme .gradient-2 {
-    background: linear-gradient(45deg, 
-        rgba(28, 48, 128, 0.7),
-        rgba(28, 48, 128, 0.3));
+    background: linear-gradient(45deg, rgba(28,48,128,0.7), rgba(28,48,128,0.3));
 }
 
 body.dark-theme .gradient-3 {
-    background: linear-gradient(45deg, 
-        rgba(35, 88, 132, 0.7),
-        rgba(35, 88, 132, 0.3));
+    background: linear-gradient(45deg, rgba(35,88,132,0.7), rgba(35,88,132,0.3));
 }
 
 body.dark-theme .gradient-4 {
-    background: linear-gradient(45deg, 
-        rgba(66, 41, 155, 0.4),
-        rgba(66, 41, 155, 0.1));
+    background: linear-gradient(45deg, rgba(66,41,155,0.4), rgba(66,41,155,0.1));
 }
 
 body.dark-theme .gradient-5 {
-    background: linear-gradient(45deg, 
-        rgba(48, 128, 155, 0.4),
-        rgba(48, 128, 155, 0.1));
+    background: linear-gradient(45deg, rgba(48,128,155,0.4), rgba(48,128,155,0.1));
 }
 
 body.dark-theme .gradient-6 {
-    background: linear-gradient(45deg, 
-        rgba(88, 132, 155, 0.4),
-        rgba(88, 132, 155, 0.1));
+    background: linear-gradient(45deg, rgba(88,132,155,0.4), rgba(88,132,155,0.1));
 }
